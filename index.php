@@ -138,7 +138,7 @@
 				$('#logout').slideDown();
 
 				var login = localStorage.getItem('login');
-				$('#user').append('Hai, '+login);
+				$('#user').html('Hai, '+login);
 				
 				if (login === 'tamu') {
 					$('#tambah').hide();
