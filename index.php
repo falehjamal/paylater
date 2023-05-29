@@ -35,9 +35,6 @@
 		  	overflow: scroll;
 		  }
 		}
-		.container{
-
-		}
 	</style>
 </head>
 <body>
@@ -81,7 +78,7 @@
 								  </div>
 								  <div class="mb-3">
 								     <label for="keterangan" class="form-label">keterangan</label>
-								    <input type="text" class="form-control" name="keterangan">
+								    <input type="text" class="form-control" name="keterangan" id="keterangan">
 								    <input type="hidden" name="author">
 								  </div>
 								  <input type="submit" class="btn btn-primary btn-sm" id="tombol-simpan" name="tombol-simpan" value="Simpan">
@@ -211,6 +208,25 @@
 
 			$("#tombol-simpan").click(function(){
 				var data = $('#form-tambah').serialize();
+				var jumlah = $('#jumlah').val();
+				var keterangan = $('#keterangan').val();
+
+				if (jumlah=='') {
+					toastr.warning('Jumlah wajib diisi ya sayang')
+					return;			
+				}else if (jumlah==0) {
+					toastr.warning('jumlah tidak boleh 0')
+					return;			
+				}else if (jumlah>1000000000 && keterangan.length>100) {
+					toastr.error('Jumlah dan Keterangan melebihi batas karakter')
+					return;			
+				}else if (jumlah>1000000000) {
+					toastr.warning('Jumlah kelebihan')
+					return;			
+				}else if (keterangan.length>100) {
+					toastr.warning('Keterangan jangan melebihi 100 karakter')
+					return;	
+				}
 			
 				$.ajax({
 					type: 'POST',
