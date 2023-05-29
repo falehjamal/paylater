@@ -6,7 +6,7 @@
 	<title>Mutasi | Transaksi</title>
 
 	<!-- CSS Assets -->
-<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"> -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 
 <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
 <link href="node_modules/toastr/build/toastr.min.css" rel="stylesheet"/>
@@ -38,10 +38,6 @@
 	</style>
 </head>
 <body>
-
-<!-- ini perubahan  -->
-
-
 	<div class="jumbotron">
 		<div class="container mt-5">
 			<div class="row">
@@ -220,7 +216,7 @@
 				}else if (jumlah>1000000000 && keterangan.length>100) {
 					toastr.error('Jumlah dan Keterangan melebihi batas karakter')
 					return;			
-				}else if (jumlah>1000000000) {
+				}else if (jumlah>1000000000 || jumlah<-1000000000) {
 					toastr.warning('Jumlah kelebihan')
 					return;			
 				}else if (keterangan.length>100) {
