@@ -6,22 +6,37 @@ include 'koneksi.php';
 
 @$query = mysqli_query($koneksi,"SELECT * FROM tb_login WHERE password = MD5('$password')");
 @$data = mysqli_fetch_array($query);
-@$data = $data['id'];
+@$id = $data['id'];
+@$nama = $data['nama'];
 
-
-if ($data==1) {
-
-  $response = ['success' => true, 'message' => 'Login successful','role' => 'faleh','id'=>1];
-  echo json_encode($response);
-
-}elseif($data>1){
-
-  $response = ['success' => true, 'message' => 'Login successful','role' => 'tamu','id'=>2];
-  echo json_encode($response);
-
+if ($id==1) {
+  echo json_encode([
+      'success' => true, 
+      'message' => 'Login successful',
+      'nama' => $nama,
+      'id'=> 1,
+  ]);
+}elseif($id==2){
+    echo json_encode([
+      'success' => true, 
+      'message' => 'Login successful',
+      'nama' => $nama,
+      'id'=> 2,
+  ]);
+}elseif($id>2){
+  echo json_encode([
+    'success' => true, 
+    'message' => 'Login successful',
+    'nama' => $nama,
+    'id'=> 3,
+]);
 } else {
-  $response = ['success' => false, 'message' => 'user password salah','role' => false,'id'=>0];
-  echo json_encode($response);
+    echo json_encode([
+      'success' => false, 
+      'message' => 'user password salah',
+      'role' => false,
+      'id'=> 0,
+    ]);
 }
 
 

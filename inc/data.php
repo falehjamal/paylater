@@ -1,8 +1,19 @@
 <?php 
-include 'hakakses.php';
+// include 'hakakses.php';
 include 'koneksi.php';
 
 $query = mysqli_query($koneksi,"SELECT * FROM ( SELECT * FROM tb_hutang ORDER BY id DESC LIMIT 5 ) AS subquery ORDER BY id ASC");
+
+// while ($data = mysqli_fetch_assoc($query)) { 
+//      $d[] = [
+//      	'jumlah'=>$data['jumlah'],
+//      	'saldo'=>$data['saldo_akhir'],
+//      	'tanggal'=>$data['created_at'],
+//      ];
+// } 
+
+// echo json_encode($d);
+// exit;
 
 ?>
 

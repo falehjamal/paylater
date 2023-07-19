@@ -27,8 +27,4 @@ mysqli_query($koneksi,"DELETE FROM `tb_hutang` WHERE author='tamu'");
 
 header("location:../");
 
-
-
-
-
 ?>
