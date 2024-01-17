@@ -7,7 +7,7 @@
 	<title>Mutasi | Transaksi</title>
 
 	<!-- CSS-->
-	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap@4.min.css">
+	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
 	<link href="node_modules/toastr/build/toastr.min.css" rel="stylesheet" />
 
 	<!-- Javascript-->
